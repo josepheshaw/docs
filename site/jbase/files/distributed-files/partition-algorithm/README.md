@@ -52,6 +52,7 @@ SUBROUTINE DistCustSub (Reserved, Key, PartNo)
         CASE Otherwise; * Invalid condition; isolate for later review
             PartNo = 99
     END CASE
+    PartNo = INT(PartNo);*jbase v4.163 read/write results in error 22 unless INT() is used on PartNo.
 RETURN
 ```
 
